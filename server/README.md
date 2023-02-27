@@ -8,7 +8,20 @@
 
 A API segue o princípio SOLID, que é um conjunto de princípios de programação orientada a objetos que visam tornar o código mais legível, sustentável e fácil de manter. O SOLID é um acrônimo que representa cinco princípios: Single Responsibility Principle (Princípio da Responsabilidade Única), Open/Closed Principle (Princípio do Aberto/Fechado), Liskov Substitution Principle (Princípio da Substituição de Liskov), Interface Segregation Principle (Princípio da Segregação de Interfaces) e Dependency Inversion Principle (Princípio da Inversão de Dependência). O uso desses princípios ajuda a tornar o código da API mais modular, flexível e escalável.
 
+ A chave secreta e a validade de cada requisição podem ser configuradas no arquivo .env, no caso abaixo cada requisição feita pelo Front tem a validade de 30 segundos.
+ 
+```bash
+ENCRYPTION_PASSWORD=JONATANSEC001254-VV
+HEADER_VALIDITY=30
+```
+
 Tambem temos um middleware "cors" para validar um array de endereços de requisição do front-end. Ele permite que somente as requisições originadas a partir de um endereço especificado no array sejam processadas pelo servidor, enquanto outras requisições serão rejeitadas com um erro "unauthorized". Além disso, ele especifica quais métodos HTTP são permitidos para a requisição (GET, POST, PUT, DELETE) e expõe o cabeçalho "Authorization" na resposta. Esse middleware é adicionado à instância do servidor através do método "use" do express.
+
+A configuração da array de dominios permitidos para acesso ao Servidor pode ser configurado tambem no arquivo .env
+
+```bash
+ORIGIN_URL_CORS =http://localhost:8080,http://127.0.0.1:8080
+```
 
 Por Jonatan Villela - jonatan.villela@gmail.com
 
