@@ -17,7 +17,7 @@ HEADER_VALIDITY=30
 
 Tambem temos um middleware "cors" para validar um array de endereços de requisição do front-end. Ele permite que somente as requisições originadas a partir de um endereço especificado no array sejam processadas pelo servidor, enquanto outras requisições serão rejeitadas com um erro "unauthorized". Além disso, ele especifica quais métodos HTTP são permitidos para a requisição (GET, POST, PUT, DELETE) e expõe o cabeçalho "Authorization" na resposta. Esse middleware é adicionado à instância do servidor através do método "use" do express.
 
-A configuração da array de dominios permitidos para acesso ao Servidor pode ser configurado tambem no arquivo .env
+A configuração da array de endereços de origens permitidos para acesso ao Servidor pode ser configurado tambem no arquivo .env
 
 ```bash
 ORIGIN_URL_CORS =http://localhost:8080,http://127.0.0.1:8080
