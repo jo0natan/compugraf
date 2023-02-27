@@ -6,6 +6,8 @@
 - crypto: https://nodejs.org/api/crypto.html
 - Sequelize: https://sequelize.org/
 
+Por Jonatan Villela - jonatan.villela@gmail.com
+
 A API segue o princípio SOLID, que é um conjunto de princípios de programação orientada a objetos que visam tornar o código mais legível, sustentável e fácil de manter. O SOLID é um acrônimo que representa cinco princípios: Single Responsibility Principle (Princípio da Responsabilidade Única), Open/Closed Principle (Princípio do Aberto/Fechado), Liskov Substitution Principle (Princípio da Substituição de Liskov), Interface Segregation Principle (Princípio da Segregação de Interfaces) e Dependency Inversion Principle (Princípio da Inversão de Dependência). O uso desses princípios ajuda a tornar o código da API mais modular, flexível e escalável.
 
  A chave secreta e a validade de cada requisição podem ser configuradas no arquivo .env, no caso abaixo cada requisição feita pelo Front tem a validade de 30 segundos.
@@ -23,13 +25,28 @@ A configuração da array de endereços de origens permitidos para acesso ao Ser
 ORIGIN_URL_CORS =http://localhost:8080,http://127.0.0.1:8080
 ```
 
-Por Jonatan Villela - jonatan.villela@gmail.com
-
 Validação de requisição cliene e servidor
 
 Isso significa que o cabeçalho de autorização é gerado com base em uma chave secreta compartilhada entre o aplicativo cliente e servidor. Se o middleware de validação de autorização estiver ativo, outros aplicativos não terão acesso ao Servidor. Somente o aplicativo com o autorizador tem acesso ao Servidor com a API.
 
 Somente a aplicação cliente tem acesso a API
+
+Configuração de Banco de Dados .env
+
+banco de dados MySQL usando Sequelize, um ORM (Object Relational Mapping) do Node.js.
+
+DB_USERNAME: nome de usuário usado para acessar o banco de dados.
+DB_PASSWORD: senha usada para acessar o banco de dados.
+DB_DATABASE: nome do banco de dados que será usado.
+DB_HOST: endereço do servidor de banco de dados.
+
+DB_CONNECTION: especifica o tipo de banco de dados que está sendo usado.
+As próximas variáveis ​​configuram as propriedades da conexão com o banco de dados:
+
+DB_POOLMAX: é o número máximo de conexões que o pool de conexões pode fazer ao banco de dados.
+DB_POOLMIN: é o número mínimo de conexões que o pool de conexões deve manter abertas.
+DB_POOLACQUIRE: é o tempo máximo, em milissegundos, que o pool de conexões tentará adquirir uma nova conexão antes de gerar um erro.
+DB_POOLIDLE: é o tempo máximo, em milissegundos, que uma conexão pode ficar inativa antes de ser encerrada pelo pool de conexões.
 
 ## Manual de rotas:
 
@@ -126,3 +143,5 @@ npm run dev
 ```bash
 npm run start
 ```
+
+Por Jonatan Villela - jonatan.villela@gmail.com
