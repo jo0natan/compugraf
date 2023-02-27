@@ -12,7 +12,7 @@ Por Jonatan Villela - jonatan.villela@gmail.com
 
 Validação de requisição cliene e servidor
 
-Isso significa que o cabeçalho de autorização é gerado com base em uma chave secreta compartilhada entre o aplicativo cliente e o servidor. Se o middleware de validação de autorização permitir que outros aplicativos acessem esse cabeçalho, ele poderá permitir que outros aplicativos acessem recursos protegidos, o que pode levar a comprometimento de segurança.
+Isso significa que o cabeçalho de autorização é gerado com base em uma chave secreta compartilhada entre o aplicativo cliente e servidor. Se o middleware de validação de autorização estiver ativo, outros aplicativos não terão acesso ao Servidor. Somente o aplicativo com o autorizador tem acesso ao Servidor com a API.
 
 Somente a aplicação cliente tem acesso a API
 
