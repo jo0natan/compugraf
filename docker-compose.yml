@@ -1,0 +1,67 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_server
+    environment:
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+    volumes:
+      - ./server/init-mysql:/docker-entrypoint-initdb.d
+    restart: always
+    ports:
+      - 3306:3306
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8183:80
+  web:
+    build: ./client
+    command: npx serve ./dist -l 8080
+    container_name: vue
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    links:
+      - app
+  app:
+    build: ./server
+    container_name: node_app    
+    command: sh -c 'echo "Aguarde 20 segundos para a inicialização" && sleep 20 && npm run start'
+    volumes:
+      - ./server:/server
+      - ./server/node_modules:/server/node_modules
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      NODE_ENV: production
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_HOST: ${DB_HOST}
+      DB_CONNECTION: ${DB_CONNECTION}
+      DB_POOLMAX: ${DB_POOLMAX}
+      DB_POOLMIN: ${DB_POOLMIN}
+      DB_POOLACQUIRE: ${DB_POOLACQUIRE}
+      DB_POOLIDLE: ${DB_POOLIDLE}
+      ENCRYPTION_PASSWORD: ${ENCRYPTION_PASSWORD}
+      HEADER_VALIDITY: ${HEADER_VALIDITY}
+      ORIGIN_URL_CORS: ${ORIGIN_URL_CORS}
+      PORT: ${PORT}
+    links:
+      - mysql
+    depends_on:
+      - mysql
