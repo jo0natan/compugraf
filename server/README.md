@@ -8,6 +8,8 @@
 
 A API segue o princípio SOLID, que é um conjunto de princípios de programação orientada a objetos que visam tornar o código mais legível, sustentável e fácil de manter. O SOLID é um acrônimo que representa cinco princípios: Single Responsibility Principle (Princípio da Responsabilidade Única), Open/Closed Principle (Princípio do Aberto/Fechado), Liskov Substitution Principle (Princípio da Substituição de Liskov), Interface Segregation Principle (Princípio da Segregação de Interfaces) e Dependency Inversion Principle (Princípio da Inversão de Dependência). O uso desses princípios ajuda a tornar o código da API mais modular, flexível e escalável.
 
+Tambem temos um middleware "cors" para validar um array de endereços de requisição do front-end. Ele permite que somente as requisições originadas a partir de um endereço especificado no array sejam processadas pelo servidor, enquanto outras requisições serão rejeitadas com um erro "unauthorized". Além disso, ele especifica quais métodos HTTP são permitidos para a requisição (GET, POST, PUT, DELETE) e expõe o cabeçalho "Authorization" na resposta. Esse middleware é adicionado à instância do servidor através do método "use" do express.
+
 Por Jonatan Villela - jonatan.villela@gmail.com
 
 Validação de requisição cliene e servidor
