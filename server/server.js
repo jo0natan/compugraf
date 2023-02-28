@@ -4,8 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const server = express();
 const db = require("./models");
-require('dotenv').config();
-
+require('dotenv').config()
 
 
 const AuthorizationValidator = require('./models/jonatanSec');
