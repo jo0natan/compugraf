@@ -17,4 +17,24 @@ Após a inicialização de todos os containers, é necessário aguardar pelo men
 Para mais detalhes da instalção do Docker Compose veja abaixo no link:
 https://docs.docker.com/compose/install/
 
+
+Para usar o projeto:
+
+  1º Passo
+```sh
+git clone https://github.com/jo0natan/compugraf.git
+```
+
+2º Passo
+```sh
+cd compugraf
+```
+
+3º Passo
+```sh
+docker-compose up -d
+```
+
+Endereço de Acesso ao Aplicativo: http://localhost:8080
+
 Por Jonatan Villela - jonatan.villela@gmail.com
