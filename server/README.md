@@ -5,6 +5,7 @@
 - cors: https://www.npmjs.com/package/cors
 - crypto: https://nodejs.org/api/crypto.html
 - Sequelize: https://sequelize.org/
+- PM2: https://github.com/Unitech/pm2
 
 Por Jonatan Villela - jonatan.villela@gmail.com
 
