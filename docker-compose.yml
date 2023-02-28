@@ -39,7 +39,7 @@ services:
   app:
     build: ./server
     container_name: node_app    
-    command: sh -c 'echo "Aguarde 20 segundos para a inicialização" && sleep 20 && npm run start'
+    command: sh -c 'echo "Aguarde 30 segundos para a inicialização" && sleep 20 && npm run start'
     volumes:
       - ./server:/server
       - ./server/node_modules:/server/node_modules
