@@ -99,13 +99,13 @@ const handleCPFInput = () => {
 <template>
   <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="80px" class="save-form" :label-position="position">
 
-        <el-form-item label="Nome" prop="nome" :rules="rules.nome">
-          <BaseInput v-model="form.nome" />
-        </el-form-item>
+    <el-form-item label="Nome" prop="nome" :rules="rules.nome">
+      <BaseInput v-model="form.nome" />
+    </el-form-item>
 
-        <el-form-item label="Sobrenome" prop="sobrenome" :rules="rules.sobrenome">
-          <BaseInput v-model="form.sobrenome" />
-        </el-form-item>
+    <el-form-item label="Sobrenome" prop="sobrenome" :rules="rules.sobrenome">
+      <BaseInput v-model="form.sobrenome" />
+    </el-form-item>
 
 
     <el-row>
@@ -123,7 +123,7 @@ const handleCPFInput = () => {
         </el-form-item>
       </el-col>
     </el-row>
-    
+
     <el-row>
       <el-col :span="12">
         <el-form-item label="E-mail" prop="email" :rules="rules.email">
@@ -136,7 +136,7 @@ const handleCPFInput = () => {
         </el-form-item>
       </el-col>
     </el-row>
-    
+
     <el-row>
       <el-col :span="8">
         <el-form-item label="CEP" prop="cep" :rules="rules.cep">
@@ -155,11 +155,11 @@ const handleCPFInput = () => {
         </el-form-item>
       </el-col>
     </el-row>
-    
+
     <el-form-item label="Logradouro" prop="logradouro" :rules="rules.logradouro">
       <BaseInput v-model="form.logradouro" />
     </el-form-item>
-    
+
     <el-form-item class="footer-item">
       <el-button @click="emit('cancel')">
         Cancelar
@@ -177,8 +177,10 @@ const handleCPFInput = () => {
   .el-input {
     width: 100%;
   }
+
   .footer-item {
     margin-bottom: 0;
+
     .el-form-item__content {
       justify-content: flex-end;
     }
