@@ -43,4 +43,6 @@ Endereço do phpMyAdmin: [http://localhost:8183/](http://localhost:8183/)
 
 Para acessar o banco de dados, deixe o campo "servidor" em branco e utilize as credenciais citadas no arquivo .env.
 
+O manual do servidor e do cliente pode ser encontrado no arquivo readme.md dentro de suas respectivas pastas.
+
 Por Jonatan Villela - jonatan.villela@gmail.com
