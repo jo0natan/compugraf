@@ -3,10 +3,10 @@
 
 Containers
 
-- mysql - serviço de banco de dados MySQL
-- phpmyadmin - serviço que fornece uma interface web para gerenciar o banco de dados MySQL
-- web - serviço que contém um aplicativo cliente Crud em Vue3.js
-- app - serviço que contém api em Express com Sequelize em Node.js
+- mysql:latest - serviço de banco de dados MySQL
+- phpmyadmin/phpmyadmin - serviço que fornece uma interface web para gerenciar o banco de dados MySQL
+- compugraf-web - serviço que contém um aplicativo cliente Crud em Vue3.js
+- compugraf-app - serviço que contém api em Express com Sequelize em Node.js
 
 Cada serviço é definido por uma seção no arquivo de composição do Docker e possui sua própria imagem Docker. As seções de serviço incluem informações sobre as variáveis de ambiente, portas expostas, volumes compartilhados e comandos de inicialização.
 
