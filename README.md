@@ -35,6 +35,10 @@ cd compugraf
 docker-compose up -d
 ```
 
-Endereço de Acesso ao Aplicativo: http://localhost:8080
+Endereço de Acesso ao Aplicativo: [http://localhost:8080](http://localhost:8080/)
+Endereço da API: [http://localhost:8000](http://localhost:8000/)
+Endereço do phpMyAdmin: [http//](http://localhost:8183/)
+
+Para acessar o banco de dados, deixe o campo "servidor" em branco e utilize as credenciais citadas no arquivo .env.
 
 Por Jonatan Villela - jonatan.villela@gmail.com
