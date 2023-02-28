@@ -23,8 +23,6 @@ timestamp: 1677538225783
 
 Isso significa que o cabeçalho de autorização é gerado com base em uma chave secreta compartilhada entre o aplicativo cliente e servidor. Se o middleware de validação de autorização estiver ativo, outros aplicativos não terão acesso ao Servidor. Somente o aplicativo com o autorizador tem acesso ao Servidor com a API.
 
-Somente a aplicação cliente tem acesso a API
-
  A chave secreta e a validade de cada requisição podem ser configuradas no arquivo .env, no caso abaixo cada requisição feita pelo Front tem a validade de 30 segundos.
  
 ```bash
