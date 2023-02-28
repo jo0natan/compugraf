@@ -107,7 +107,6 @@ const handleCPFInput = () => {
       <BaseInput v-model="form.sobrenome" />
     </el-form-item>
 
-
     <el-row>
       <el-col :span="12">
         <el-form-item label="Nac." prop="nacionalidade">
