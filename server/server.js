@@ -25,7 +25,7 @@ const corsSettings = {
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE"],
-  exposedHeaders: ["Authorization"],
+  exposedHeaders: ["Authorization ------- CORS"],
 };
 
 server.use(cors(corsSettings));

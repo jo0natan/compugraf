@@ -1,5 +1,5 @@
 const db = require("../models");
-const Pessoa = db.posts;
+const Pessoa = db.restCompugraf;
 const Op = db.Sequelize.Op;
 
 class PessoaService {
