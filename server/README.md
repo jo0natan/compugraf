@@ -14,7 +14,7 @@ A API segue o princípio SOLID, que é um conjunto de princípios de programaç�
 
 Validação de requisição cliente e servidor
 
-Isso significa que o cabeçalho de autorização é gerado com base em uma chave secreta compartilhada entre o aplicativo cliente e servidor. Se o middleware de validação de autorização estiver ativo, outros aplicativos não terão acesso ao Servidor. Somente o aplicativo com o autorizador tem acesso ao Servidor com a API.
+Isso significa que o cabeçalho de autorização é gerado com base em uma chave secreta compartilhada entre o aplicativo cliente e servidor.
 
 Exemplo Header de Autenticação
 
