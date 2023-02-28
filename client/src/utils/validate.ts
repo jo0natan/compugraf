@@ -6,18 +6,18 @@ interface Rules {
 }
 
 export const rules: Rules = {
-  nome: [{ required: true, message: 'Campo nome é obrigatório', trigger: 'blur' }],
-  sobrenome: [{ required: true, message: 'Campo sobrenome é obrigatório', trigger: 'blur' }],
-  nacionalidade: [{ required: true, message: 'Campo nacionalidade é obrigatório', trigger: 'blur' }],
-  email: [{ required: true, message: 'Campo e-mail é obrigatório', trigger: 'blur' }],
-  telefone: [{ required: true, message: 'Campo telefone é obrigatório', trigger: 'blur' }],
+  nome: [{ required: true, message: 'Nome é obrigatório', trigger: 'blur' }],
+  sobrenome: [{ required: true, message: 'Sobrenome é obrigatório', trigger: 'blur' }],
+  nacionalidade: [{ required: true, message: 'Nacionalidade é obrigatório', trigger: 'blur' }],
+  email: [{ required: true, message: 'E-mail é obrigatório', trigger: 'blur' }],
+  telefone: [{ required: true, message: 'Telefone é obrigatório', trigger: 'blur' }],
   cep: [
-    { required: true, message: 'Campo CEP é obrigatório', trigger: 'blur' },
+    { required: true, message: 'CEP é obrigatório', trigger: 'blur' },
     { pattern: /[0-9]{5}-[0-9]{3}/, message: 'CEP inválido, precisa estar no formato 99999-999', trigger: 'blur' },
   ],
-  logradouro: [{ required: true, message: 'Campo logradouro é obrigatório', trigger: 'blur' }],
-  cidade: [{ required: true, message: 'Campo cidade é obrigatório', trigger: 'blur' }],
-  estado: [{ required: true, message: 'Campo estado é obrigatório', trigger: 'blur' }],
+  logradouro: [{ required: true, message: 'Logradouro é obrigatório', trigger: 'blur' }],
+  cidade: [{ required: true, message: 'Cidade é obrigatório', trigger: 'blur' }],
+  estado: [{ required: true, message: 'Estado é obrigatório', trigger: 'blur' }],
   cpf: [
     {
       required: true,

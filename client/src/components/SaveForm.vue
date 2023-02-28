@@ -99,47 +99,67 @@ const handleCPFInput = () => {
 <template>
   <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="80px" class="save-form" :label-position="position">
 
-    <el-form-item label="Nome" prop="nome" :rules="rules.nome">
-      <BaseInput v-model="form.nome" />
-    </el-form-item>
+        <el-form-item label="Nome" prop="nome" :rules="rules.nome">
+          <BaseInput v-model="form.nome" />
+        </el-form-item>
 
-    <el-form-item label="Sobrenome" prop="sobrenome" :rules="rules.sobrenome">
-      <BaseInput v-model="form.sobrenome" />
-    </el-form-item>
+        <el-form-item label="Sobrenome" prop="sobrenome" :rules="rules.sobrenome">
+          <BaseInput v-model="form.sobrenome" />
+        </el-form-item>
 
-    <el-form-item label="Nac." prop="nacionalidade">
-      <BaseInput v-model="form.nacionalidade" />
-    </el-form-item>
 
-    <el-form-item label="CPF" prop="cpf" :rules="rules.cpf">
-      <BaseInput v-model="form.cpf" maxlength="14" @input="handleCPFInput" />
-    </el-form-item>
-
-    <el-form-item label="E-mail" prop="email" :rules="rules.email">
-      <BaseInput v-model="form.email" />
-    </el-form-item>
-
-    <el-form-item label="Telefone" prop="telefone" :rules="rules.telefone">
-      <BaseInput v-model="form.telefone" />
-    </el-form-item>
-
-    <el-form-item label="CEP" prop="cep" :rules="rules.cep">
-      <BaseInput v-model="form.cep" maxlength="9" @input="handleCepInput" @blur="fetchCepData(form.cep)" />
-      <div v-if="loading">Carregando cep aguarde....</div>
-    </el-form-item>
-
+    <el-row>
+      <el-col :span="12">
+        <el-form-item label="Nac." prop="nacionalidade">
+          <el-select v-model="form.nacionalidade">
+            <el-option label="Brasileiro" value="Brasileiro"></el-option>
+            <el-option label="Estrangeiro" value="Estrangeiro"></el-option>
+          </el-select>
+        </el-form-item>
+      </el-col>
+      <el-col :span="12">
+        <el-form-item label="CPF" prop="cpf" :rules="rules.cpf">
+          <BaseInput v-model="form.cpf" maxlength="14" @input="handleCPFInput" />
+        </el-form-item>
+      </el-col>
+    </el-row>
+    
+    <el-row>
+      <el-col :span="12">
+        <el-form-item label="E-mail" prop="email" :rules="rules.email">
+          <BaseInput v-model="form.email" />
+        </el-form-item>
+      </el-col>
+      <el-col :span="12">
+        <el-form-item label="Telefone" prop="telefone" :rules="rules.telefone">
+          <BaseInput v-model="form.telefone" />
+        </el-form-item>
+      </el-col>
+    </el-row>
+    
+    <el-row>
+      <el-col :span="8">
+        <el-form-item label="CEP" prop="cep" :rules="rules.cep">
+          <BaseInput v-model="form.cep" maxlength="9" @input="handleCepInput" @blur="fetchCepData(form.cep)" />
+          <div v-if="loading">Buscando cep...</div>
+        </el-form-item>
+      </el-col>
+      <el-col :span="8">
+        <el-form-item label="Cidade" prop="cidade" :rules="rules.cidade">
+          <BaseInput v-model="form.cidade" />
+        </el-form-item>
+      </el-col>
+      <el-col :span="8">
+        <el-form-item label="Estado" prop="estado" :rules="rules.estado">
+          <BaseInput v-model="form.estado" />
+        </el-form-item>
+      </el-col>
+    </el-row>
+    
     <el-form-item label="Logradouro" prop="logradouro" :rules="rules.logradouro">
       <BaseInput v-model="form.logradouro" />
     </el-form-item>
-
-    <el-form-item label="Cidade" prop="cidade" :rules="rules.cidade">
-      <BaseInput v-model="form.cidade" />
-    </el-form-item>
-
-    <el-form-item label="Estado" prop="estado" :rules="rules.estado">
-      <BaseInput v-model="form.estado" />
-    </el-form-item>
-
+    
     <el-form-item class="footer-item">
       <el-button @click="emit('cancel')">
         Cancelar
@@ -148,6 +168,7 @@ const handleCPFInput = () => {
         Confirmar
       </el-button>
     </el-form-item>
+
   </el-form>
 </template>
 
