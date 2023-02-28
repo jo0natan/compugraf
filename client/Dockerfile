@@ -6,7 +6,7 @@ WORKDIR /client
 COPY package.json ./
 COPY . .
 
-RUN npx browserslist@latest --update-db && rm -rf node_modules && rm -rf dist
+RUN rm -rf node_modules && rm -rf dist
 RUN npm install
 
 RUN npm run build
